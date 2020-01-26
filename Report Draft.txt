@@ -1,5 +1,35 @@
-I
-II
-III
-IV
-V
+I.INTRODUCTION AND MOTIVATION
+Solving handwritten math equations using typical gadgets like smart phones or computers is one the most desired ideas for reviewers and other researchers in general. The discovery of smart phone apps (e.g PhotoMath) or relevant other software modules have taken the passion to a reality. However, the apps and other modules, though impressive by some extent, there are limitations using these tools for handwritten math equation solving.
+
+Handwritten math equations are hard to identify separately by machine and even when the components are identified it creates another complexity of determining the context of the whole equation. Therefore it is more complex of a situation to be dealt with in order to solve accurately. The adoption of neural network processing to identify math symbols from the input data and subsequently parsing it to a meaningful equation are making the whole process more obvious.
+
+
+
+
+II.BACKGROUND AND RELATED WORK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+III.Approach and implementation
+
+IV.Evaluation
+
+
+
+
+V.Conclusion
