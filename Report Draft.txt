@@ -6,7 +6,7 @@ kkkk
 
 
 
-II.BACKGROUND AND RELATED WORK
+II. state of the art / related work
 
 
 
@@ -25,7 +25,7 @@ II.BACKGROUND AND RELATED WORK
 
 
 
-III.Approach and implementation
+III.your approach / design, implementation and evaluation 
 
 
 
@@ -37,7 +37,7 @@ III.Approach and implementation
 
 
 
-IV.Evaluation
+IV.discussion and conclusion
 
 
 
@@ -45,6 +45,3 @@ IV.Evaluation
 
 
 
-
-
-V.Conclusion
