@@ -1,0 +1,34 @@
+
+# Dataset 2016
+
+Beam width: 5
+
+## Highest Probability
+
+|                                    Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|------------------------------------------|------------------|--------------------------------------|-------------------|
+| res_256_try3_data2013_extra_data20140181 |           35.41% |                               45.25% |            41.16% |
+
+|                                    Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|------------------------------------------|---------------------|-----------------------------------------|-------------------------------|
+| res_256_try3_data2013_extra_data20140181 |              10.29% |                                  10.29% |                        13.60% |
+
+## Best
+
+|                                    Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|------------------------------------------|------------------|--------------------------------------|-------------------|
+| res_256_try3_data2013_extra_data20140181 |           32.29% |                               41.58% |            37.30% |
+
+|                                    Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|------------------------------------------|---------------------|-----------------------------------------|-------------------------------|
+| res_256_try3_data2013_extra_data20140181 |              16.04% |                                  16.04% |                        21.45% |
+
+## Mean
+
+|                                    Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|------------------------------------------|------------------|--------------------------------------|-------------------|
+| res_256_try3_data2013_extra_data20140181 |           36.69% |                               46.83% |            42.46% |
+
+|                                    Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|------------------------------------------|---------------------|-----------------------------------------|-------------------------------|
+| res_256_try3_data2013_extra_data20140181 |               3.38% |                                  

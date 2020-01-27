@@ -1,0 +1,34 @@
+# Dataset 2016
+
+Beam width: 5
+
+## Highest Probability
+
+|             Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|-------------------|------------------|--------------------------------------|-------------------|
+| res1000_41_-20051 |           40.93% |                               67.89% |            65.38% |
+
+|             Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|-------------------|---------------------|-----------------------------------------|-------------------------------|
+| res1000_41_-20051 |               1.13% |                                   1.13% |                         1.57% |
+
+## Best
+
+|             Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|-------------------|------------------|--------------------------------------|-------------------|
+| res1000_41_-20051 |           39.59% |                               66.04% |            62.69% |
+
+|             Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|-------------------|---------------------|-----------------------------------------|-------------------------------|
+| res1000_41_-20051 |               2.53% |                                   2.53% |                         3.75% |
+
+## Mean
+
+|             Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|-------------------|------------------|--------------------------------------|-------------------|
+| res1000_41_-20051 |           41.63% |                               69.17% |            66.20% |
+
+|             Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|-------------------|---------------------|-----------------------------------------|-------------------------------|
+| res1000_41_-20051 |               0.51% |                                   0.56% |                         1.10% |
+

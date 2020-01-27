@@ -1,0 +1,30 @@
+## Highest Probability
+
+|                 Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|-----------------------|------------------|--------------------------------------|-------------------|
+| resolution_1000^20030 |           41.97% |                               70.43% |            68.08% |
+
+|                 Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|-----------------------|---------------------|-----------------------------------------|-------------------------------|
+| resolution_1000^20030 |               0.61% |                                   0.61% |                         1.13% |
+
+## Best
+
+|                 Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|-----------------------|------------------|--------------------------------------|-------------------|
+| resolution_1000^20030 |           40.66% |                               68.56% |            65.54% |
+
+|                 Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|-----------------------|---------------------|-----------------------------------------|-------------------------------|
+| resolution_1000^20030 |               1.66% |                                   1.66% |                         2.79% |
+
+## Mean
+
+|                 Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|-----------------------|------------------|--------------------------------------|-------------------|
+| resolution_1000^20030 |           42.57% |                               71.73% |            68.74% |
+
+|                 Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|-----------------------|---------------------|-----------------------------------------|-------------------------------|
+| resolution_1000^20030 |               0.35% |                                   0.40% |                         0.87% |
+

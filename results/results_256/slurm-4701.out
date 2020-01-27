@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "evaluate_new_256.py", line 810, in <module>
+    main()
+  File "evaluate_new_256.py", line 777, in main
+    prefix=options.prefix,
+  File "evaluate_new_256.py", line 460, in evaluate
+    batch_pred.append(batch_full.numpy())
+TypeError: can't convert CUDA tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.

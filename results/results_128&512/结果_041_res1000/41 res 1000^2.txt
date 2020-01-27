@@ -1,0 +1,6 @@
+## Highest Probability
+
+|                 Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|-----------------------|------------------|--------------------------------------|-------------------|
+| resolution_1000^20041 |           40.xx% |                               68.xx% |            65.xx% |
+

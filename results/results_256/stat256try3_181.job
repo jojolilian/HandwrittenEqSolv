@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --partition=student
+#SBATCH --account=student
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=11G
+#SBATCH --job-name="stat_256try3_181"
+#SBATCH --gres=gpu:1
+python evaluate_new_256.py -d 2016 -b 2 --beam-width 5 -c checkpoints/res_256_try3_data2013_extra_data20140181.pth
+
+

@@ -1,0 +1,29 @@
+[  1/200] Epoch 1 (Train):   0%|          | 0/7067 [00:00<?, ?it/s]Running 200 epochs on cuda
+[  2/200] Epoch 2 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  1/200] Epoch 1: Train Accuracy = 0.40532, Train Loss = 2.83832, Validation Accuracy = 0.27602, Validation Loss = 4.44551, lr = 0.1 (time elapsed 00:31:48)
+[  3/200] Epoch 3 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  2/200] Epoch 2: Train Accuracy = 0.45825, Train Loss = 2.47493, Validation Accuracy = 0.31461, Validation Loss = 3.62176, lr = 0.1 (time elapsed 00:31:18)
+[  4/200] Epoch 4 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  3/200] Epoch 3: Train Accuracy = 0.47549, Train Loss = 2.35593, Validation Accuracy = 0.30688, Validation Loss = 3.63553, lr = 0.1 (time elapsed 00:31:16)
+[  5/200] Epoch 5 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  4/200] Epoch 4: Train Accuracy = 0.49435, Train Loss = 2.27006, Validation Accuracy = 0.33549, Validation Loss = 3.50656, lr = 0.1 (time elapsed 00:31:01)
+[  6/200] Epoch 6 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  5/200] Epoch 5: Train Accuracy = 0.50858, Train Loss = 2.17810, Validation Accuracy = 0.33340, Validation Loss = 3.64457, lr = 0.1 (time elapsed 00:31:01)
+[  7/200] Epoch 7 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  6/200] Epoch 6: Train Accuracy = 0.52037, Train Loss = 2.11502, Validation Accuracy = 0.35756, Validation Loss = 2.93469, lr = 0.1 (time elapsed 00:31:01)
+[  8/200] Epoch 8 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  7/200] Epoch 7: Train Accuracy = 0.53854, Train Loss = 2.03113, Validation Accuracy = 0.29191, Validation Loss = 3.30040, lr = 0.1 (time elapsed 00:31:03)
+[  9/200] Epoch 9 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  8/200] Epoch 8: Train Accuracy = 0.55276, Train Loss = 1.96465, Validation Accuracy = 0.37529, Validation Loss = 3.08363, lr = 0.1 (time elapsed 00:31:26)
+
+
+
+[ 10/200] Epoch 10 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][  9/200] Epoch 9: Train Accuracy = 0.56905, Train Loss = 1.87787, Validation Accuracy = 0.40210, Validation Loss = 2.74377, lr = 0.1 (time elapsed 00:31:25)
+
+
+
+[ 11/200] Epoch 11 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][ 10/200] Epoch 10: Train Accuracy = 0.57525, Train Loss = 1.82846, Validation Accuracy = 0.38704, Validation Loss = 2.96542, lr = 0.1 (time elapsed 00:31:25)
+[ 12/200] Epoch 12 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][ 11/200] Epoch 11: Train Accuracy = 0.58355, Train Loss = 1.78615, Validation Accuracy = 0.36759, Validation Loss = 3.92907, lr = 0.1 (time elapsed 00:31:20)
+[ 13/200] Epoch 13 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][ 12/200] Epoch 12: Train Accuracy = 0.60135, Train Loss = 1.70533, Validation Accuracy = 0.40405, Validation Loss = 3.16151, lr = 0.1 (time elapsed 00:31:24)
+[ 14/200] Epoch 14 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][ 13/200] Epoch 13: Train Accuracy = 0.61080, Train Loss = 1.65660, Validation Accuracy = 0.37669, Validation Loss = 3.43943, lr = 0.1 (time elapsed 00:31:25)
+[ 15/200] Epoch 15 (Train):   0%|          | 0/7067 [00:00<?, ?it/s][ 14/200] Epoch 14: Train Accuracy = 0.62202, Train Loss = 1.59992, Validation Accuracy = 0.38307, Validation Loss = 4.43385, lr = 0.1 (time elapsed 00:31:09)
+
+
+
+
+
+
+
+

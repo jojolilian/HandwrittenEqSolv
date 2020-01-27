@@ -1,0 +1,20 @@
+Running 200 epochs on cuda
+Traceback (most recent call last):
+  File "/home/stud-qiaodan/job/res256_mordata/dataset_.py", line 60, in encode_truth
+    index, tok_len = max(matching_starts, key=lambda match: match[1])
+ValueError: max() arg is an empty sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "train256_.py", line 521, in <module>
+    main()
+  File "train256_.py", line 445, in main
+    gt_train, tokensfile, root=root, crop=options.crop, transform=transformers
+  File "/home/stud-qiaodan/job/res256_mordata/dataset_.py", line 137, in __init__
+    for p, truth in reader
+  File "/home/stud-qiaodan/job/res256_mordata/dataset_.py", line 137, in <listcomp>
+    for p, truth in reader
+  File "/home/stud-qiaodan/job/res256_mordata/dataset_.py", line 64, in encode_truth
+    raise Exception("Truth contains unknown token")
+Exception: Truth contains unknown token
