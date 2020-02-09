@@ -1,0 +1,31 @@
+In conclusion, this type of multiscale attention dense net is suitable for the purpose of handwritten equation recognition, we managed to trained the multiscale attention dense net model and feeded it with all data that we get, and to enhance the performance of recognizing some specific tokens we made some changes of the model and got better results. In this process, we found out that the neuron network has different abilities to recognize differnet types of tokens. For example to extract the spatial relations of the tokens we need deeper network rather than the symbols. And the neuron network is a data hungry architecture, with more data and better data, it can always show better peroformance. The training data we are using now has totally 11046 images with labels, and if we can get acces to more data, I'm sure we can have even better result. 
+
+
+
+
+
+
+
+Discussion 
+Now the main part of neuron network is already finished, but some works are still needed. To achieve the original purpose, some correction mechnisum still needs to be added after the neuron network, as we can see in the final testing result of the model with best preformance, there's still a rather high error rate. To get rid of this type of error, we need to add some manual correction to remove the error. At last we still need to transfer the final expression to the math equation application so that we can get an evaluation of the expression. 
+
+
+ALL DATA 3CNN
+|                Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|----------------------|------------------|--------------------------------------|-------------------|
+| 3CNN_tr_mostdata0124 |           31.03% |                               39.23% |            35.30% |
+
+|                Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|----------------------|---------------------|-----------------------------------------|-------------------------------|
+| 3CNN_tr_mostdata0124 |              14.39% |                                  14.39% |                        19.01% |
+
+
+ALL DATA
+|                     Model | Token error rate | Token error rate (no special tokens) | Symbol error rate |
+|---------------------------|------------------|--------------------------------------|-------------------|
+| res256_tr_mostdata_3_0113 |           31.00% |                               39.02% |            35.35% |
+
+|                     Model | Correct expressions | Correct expressions (no special tokens) | Correct expressions (Symbols) |
+|---------------------------|---------------------|-----------------------------------------|-------------------------------|
+| res256_tr_mostdata_3_0113 |              12.90% |                                  12.90% |                        17.96% |
+
