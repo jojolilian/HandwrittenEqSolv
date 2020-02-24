@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from checkpoint import default_checkpoint, load_checkpoint
 from model_3CNNs import Encoder, Decoder
-from dataset_ import CrohmeDataset, START, PAD, SPECIAL_TOKENS, collate_batch, load_vocab
+from dataset import CrohmeDataset, START, PAD, SPECIAL_TOKENS, collate_batch, load_vocab
 
 input_size = (256, 256)
 low_res_shape = (684, input_size[0] // 16, input_size[1] // 16)
