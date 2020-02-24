@@ -11,7 +11,7 @@ growth_rate = 24
 
 n = 256
 n_prime = 512
-decoder_conv_filters = 256            ######################?
+decoder_conv_filters = 256          
 gru_hidden_size = 256
 embedding_dim = 256
 
@@ -38,10 +38,10 @@ class BottleneckBlock(nn.Module):
         self.norm1 = nn.BatchNorm2d(input_size)
         self.relu = nn.ReLU(inplace=True)
         self.conv1 = nn.Conv2d(
-            input_size, inter_size, kernel_size=1, stride=1, bias=False          ############  1
+            input_size, inter_size, kernel_size=1, stride=1, bias=False         
         )
         self.norm2 = nn.BatchNorm2d(inter_size)
-        self.conv2 = nn.Conv2d(                                                  ############  2
+        self.conv2 = nn.Conv2d(                                                 
             inter_size, growth_rate, kernel_size=3, stride=1, padding=1, bias=False
         )
         self.dropout = nn.Dropout(dropout_rate)
@@ -70,7 +70,7 @@ class TransitionBlock(nn.Module):
         super(TransitionBlock, self).__init__()
         self.norm = nn.BatchNorm2d(input_size)
         self.relu = nn.ReLU(inplace=True)
-        self.conv = nn.Conv2d(                                                      ########  3
+        self.conv = nn.Conv2d(                                                   
             input_size, output_size, kernel_size=1, stride=1, bias=False
         )
         self.pool = nn.AvgPool2d(kernel_size=2, stride=2)
@@ -128,7 +128,7 @@ class Encoder(nn.Module):
             checkpoint (dict, optional): State dictionary to be loaded
         """
         super(Encoder, self).__init__()
-        self.conv0 = nn.Conv2d(                                                   ##########  4changed
+        self.conv0 = nn.Conv2d(                                                  
             img_channels,
             num_in_features,
             kernel_size=7,
@@ -159,7 +159,7 @@ class Encoder(nn.Module):
         num_features = num_features + depth * growth_rate
         self.trans2_norm = nn.BatchNorm2d(num_features)
         self.trans2_relu = nn.ReLU(inplace=True)
-        self.trans2_conv = nn.Conv2d(                                              #########  5
+        self.trans2_conv = nn.Conv2d(                                             
             num_features, num_features // 2, kernel_size=1, stride=1, bias=False
         )
         self.trans2_pool = nn.AvgPool2d(kernel_size=2, stride=2)
@@ -226,7 +226,7 @@ class CoverageAttention(nn.Module):
         """
         super(CoverageAttention, self).__init__()
         self.alpha = None
-        self.conv = nn.Conv2d(1, output_size, kernel_size=kernel_size, padding=padding)    ######  6
+        self.conv = nn.Conv2d(1, output_size, kernel_size=kernel_size, padding=padding)   
         self.U_a = nn.Parameter(torch.empty((n_prime, input_size)))
         self.U_f = nn.Parameter(torch.empty((n_prime, output_size)))
         self.nu_attn = nn.Parameter(torch.empty(n_prime))
