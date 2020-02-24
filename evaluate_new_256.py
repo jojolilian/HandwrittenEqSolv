@@ -324,6 +324,7 @@ def evaluate(
     length_actu_distribute = [[ 0 for i in range(100)] for j in range(3)]
     distance_distribute = [[ 0 for i in range(100)] for j in range(3)]
     
+    ids_dist = [0 for i in range(119)] # 119 is the number of symbol types. 
     special_tokens = [data_loader.dataset.token_to_id[tok] for tok in SPECIAL_TOKENS]
     non_symbols_encoded = [data_loader.dataset.token_to_id[tok] for tok in non_symbols]
     best = {
@@ -411,7 +412,18 @@ def evaluate(
             # Only the beam_width number of hypotheses with the highest probabilities
             # are kept for the next iteration.
             hypotheses = pick_top_k_unique(step_hypotheses, beam_width)
+        tensor = hypotheses[0]["sequence"]["full"] #hypotheses[0]["sequence"]["full"][0]is the first tensor in every loop
+        
+########################################################
+#when the id occurs, the number in the cooresponding place plus 1
+        for sequence in tensor.cpu().numpy():
+            ids_ = list(sequence)
 
+            for i in ids_:
+                ids_dist[i]+=1
+
+
+########################################################## 
         expected_removed = [
             remove_special_tokens(exp, special_tokens) for exp in expected
         ]
@@ -551,6 +563,11 @@ def evaluate(
             ]
             highest_prob["correct"][category] += hypotheses[0]["correct"][category]
 
+            
+    print("#################________the distribution of tokens during prediction________#################")
+    
+    print(ids_dist) # numbers of the occurance of each token in the prediction
+    print("##############################################################################################")
     best["error"] = {
         "full": best["distance"]["full"] / best["num_tokens"]["full"],
         "removed": best["distance"]["removed"] / best["num_tokens"]["removed"],
