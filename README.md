@@ -15,7 +15,8 @@ If you'd like to use a different installation method or another CUDA version wit
 
 # Data
 
-CROHME Competition on Recognition of Online Handwritten Mathematical Expressionse2 https://www.isical.ac.in/~crohme/CROHME_data.html
+CROHME Competition on Recognition of Offline Handwritten Mathematical Expressionse 
+Dataset source: http://tc11.cvc.uab.es/datasets/ICFHR-CROHME-2016_1
 
 
 # Usage
