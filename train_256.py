@@ -36,8 +36,8 @@ dropout_rate = 0.2
 teacher_forcing_ratio = 0.5
 seed = 1234
 
-gt_train = "./data/gt_split/train.tsv"
-gt_validation = "./data/gt_split/validation.tsv"
+gt_train = "./data/gt_split/train_new.tsv"
+gt_validation = "./data/gt_split/validation_new.tsv"
 tokensfile = "./data/tokens.tsv"
 root = "./data/train1000/"
 use_cuda = torch.cuda.is_available()
