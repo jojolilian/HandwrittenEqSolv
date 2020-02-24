@@ -1,6 +1,6 @@
-#Handwritten Equation Solver
+# Handwritten Equation Solver
 
-#Requirements
+# Requirements
 Python 3
 PyTorch
 All dependencies can be installed with PIP.
