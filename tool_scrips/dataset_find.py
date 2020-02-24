@@ -82,7 +82,7 @@ def load_vocab(tokens_file):
         return token_to_id, id_to_token
 
 
-def collate_batch(data):    #让大家一样长的padding
+def collate_batch(data):    
 #    print(data)
     max_len = max([len(d["truth"]["encoded"]) for d in data])
     # Padding with -1, will later be replaced with the PAD token
@@ -91,10 +91,10 @@ def collate_batch(data):    #让大家一样长的padding
         for d in data
     ]
     return {
-#        "path": [d["path"] for d in data],
-#        "image": torch.stack([d["image"] for d in data], dim=0),
+        "path": [d["path"] for d in data],
+        "image": torch.stack([d["image"] for d in data], dim=0),
         "truth": {
-#            "text": [d["truth"]["text"] for d in data],
+            "text": [d["truth"]["text"] for d in data],
             "encoded": torch.tensor(padded_encoded),
         },
     }
