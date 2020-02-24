@@ -1,6 +1,13 @@
-# HandwrittenEqSolv
+#Handwritten Equation Solver
 
-Handwritten Equation Solver
+#Requirements
+Python 3
+PyTorch
+All dependencies can be installed with PIP.
+
+pip install -r requirements.txt
+If you'd like to use a different installation method or another CUDA version with PyTorch (e.g. CUDA 10) follow the instructions on PyTorch - Getting Started.
+
 
 Some useful references:
 
