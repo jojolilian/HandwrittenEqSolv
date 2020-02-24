@@ -22,7 +22,9 @@ ICDAR conference
 
 Dataset for handwritting https://www.kaggle.com/datasets
 
-CROHME Competition on Recognition of Online Handwritten Mathematical Expressionse2 https://www.isical.ac.in/~crohme/CROHME_data.html
+
+CROHME Competition on Recognition of Offline Handwritten Mathematical Expressionse 
+Dataset source: http://tc11.cvc.uab.es/datasets/ICFHR-CROHME-2016_1
 
 There are 3 sections with different options in the same model.
 ----original version with the expression picture sizes of 128*128 
