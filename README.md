@@ -41,13 +41,13 @@ For all options see
 
 python train.py --help:
 
-# evaluating
+# Evaluating
 The evaluate.py contains both predicting and evaluating process. Since there are 3 different models, the evaluating part has also 3 different files. For each different models we also did some analysis on the result and by running the evaluate.py, we shall get the statistical count of the predictions, and these statistical result will be presented in form of histogramm in later works.
 
 For example: to evaluate the model with deeper CNNs use the evaluate.py script with the best weight we got on the test set 2016 and the beam width of 5:
 
 python evaluate_256_3CNNs.py -d 2016 --beam-width 5 -c checkpoints/3CNN_tr_mostdata0124.pth
 
-# ploting
+# Ploting
 
 
