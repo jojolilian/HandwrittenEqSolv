@@ -11,7 +11,7 @@ growth_rate = 24
 
 n = 256
 n_prime = 512
-decoder_conv_filters = 256            ######################?
+decoder_conv_filters = 256          
 gru_hidden_size = 256
 embedding_dim = 256
 
@@ -140,7 +140,7 @@ class Encoder(nn.Module):
         '''
         
         
-        self.conv0_1 = nn.Conv2d(                                                   ##########  4changed
+        self.conv0_1 = nn.Conv2d(                                                    
             img_channels,
             num_in_features,
             kernel_size=7,
@@ -150,11 +150,9 @@ class Encoder(nn.Module):
         )
         self.norm0_1 = nn.BatchNorm2d(num_in_features)
         self.relu = nn.ReLU(inplace=True)
-#        self.max_pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
-#        num_features = num_in_features
         
         
-        self.conv0_2 = nn.Conv2d(                                                   ##########  4changed
+        self.conv0_2 = nn.Conv2d(                                                   
             num_in_features,
             num_in_features,
             kernel_size=5,
@@ -164,14 +162,9 @@ class Encoder(nn.Module):
         )
         self.norm0_2 = nn.BatchNorm2d(num_in_features)
         self.relu = nn.ReLU(inplace=True)
-#        self.max_pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
-#        
-#        
         
         
-        
-        
-        self.conv0_3 = nn.Conv2d(                                                   ##########  4changed
+        self.conv0_3 = nn.Conv2d(                                                   
             num_in_features,
             num_in_features,
             kernel_size=1,
@@ -211,7 +204,7 @@ class Encoder(nn.Module):
         num_features = num_features + depth * growth_rate
         self.trans2_norm = nn.BatchNorm2d(num_features)
         self.trans2_relu = nn.ReLU(inplace=True)
-        self.trans2_conv = nn.Conv2d(                                              #########  5
+        self.trans2_conv = nn.Conv2d(                                              
             num_features, num_features // 2, kernel_size=1, stride=1, bias=False
         )
         self.trans2_pool = nn.AvgPool2d(kernel_size=2, stride=2)
@@ -295,7 +288,7 @@ class CoverageAttention(nn.Module):
         """
         super(CoverageAttention, self).__init__()
         self.alpha = None
-        self.conv = nn.Conv2d(1, output_size, kernel_size=kernel_size, padding=padding)    ######  6
+        self.conv = nn.Conv2d(1, output_size, kernel_size=kernel_size, padding=padding)    
         self.U_a = nn.Parameter(torch.empty((n_prime, input_size)))
         self.U_f = nn.Parameter(torch.empty((n_prime, output_size)))
         self.nu_attn = nn.Parameter(torch.empty(n_prime))
@@ -320,7 +313,7 @@ class CoverageAttention(nn.Module):
         # From: (batch_size x L)
         # To: (batch_size x H x W)
         alpha_sum = self.alpha.sum(1).view(batch_size, x.size(2), x.size(3))
-        conv_out = self.conv(alpha_sum.unsqueeze(1))##在1处增加一个纬度
+        conv_out = self.conv(alpha_sum.unsqueeze(1))
         # Change dimensions back
         # From: (batch_size x output_size x H x W)
         # To: (batch_size x output_size x L)
