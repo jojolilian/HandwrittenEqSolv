@@ -74,18 +74,11 @@ def remove_special_tokens(tokens, special_tokens=SPECIAL_TOKENS, strip_only=Fals
 
 
 def calc_distances(actual, expected):
-   # f1 = open('./错的离谱.txt','a')
     dist_list = [
         editdistance.eval(act.tolist(), exp.tolist())  
-        ##editdistance.eval 计算不同的元素（在list里） tolist（）把series转换成list
+
         for act, exp in zip(actual, expected)
     ]
-#    f1.write('ACTUAL:'+str(actual)+'\n')
-#    f1.write('The Dist List:')
-#    f1.write(str(dist_list)+'\n')
-#    for n,dist in enumerate(dist_list):
-#        f1.write('    +'\n')
-#    f1.close()
     return dist_list
 
 
@@ -266,14 +259,7 @@ def batch_single_hypotheses(single_hypotheses):
         batched_hypotheses.append(batch_h)
     
     
-#    i=0
-#    f1 = open('./batch_single_output.txt','a')
-#    for h in batched_hypotheses:
-#        i=1+i
-#        f1.write('bh append No.'+str(i))
-#        f1.write(str(h["sequence"]["full"])+'\n')
-#        f1.write(str(h["probability"])+'\n')
-#    f1.close()
+
     return batched_hypotheses
 
 
@@ -284,18 +270,7 @@ def pick_top_k_unique(hypotheses, count):
     sorted_hypotheses = [
         sorted(hs, key=lambda h: h["probability"].item(), reverse=True)
         for hs in unbatch_hypotheses(hypotheses)
-    ]
-    
-    
-#    i=0
-#    for h in sorted_hypotheses:
-#        i=1+i
-#        print('equation No.'+str(i))
-#        for ii in h: 
-#            print(ii["probability"])
-##可以看到不同sequences预测的从高到低的概率（每个作beamwidth个预测）
-        
-        
+    ]        
         
     unique_hypotheses = [[] for _ in sorted_hypotheses]
 
@@ -312,17 +287,7 @@ def pick_top_k_unique(hypotheses, count):
                     break
             if not already_exists:
                 unique_hypotheses[i].append(h)
-#    i=0
-#    f1 = open('./top_k_output.txt','a')
-#    for h in unique_hypotheses:
-#        i=1+i
-#        f1.write('\n'+'uh******************** No.'+str(i))
-#        j = 1
-#        for ii in h:
-#            j = j+1
-#            f1.write('append No.'+str(j))
-#            f1.write(str(ii["sequence"]["full"])+'\n')
-#    f1.close()
+
     return batch_single_hypotheses(unique_hypotheses)
 
 '''
@@ -475,18 +440,11 @@ def evaluate(
                 num_pad = np.sum(pred == 118)
                 length_seq = length_seq - num_pad
                 length_pred_distribute[n][length_seq] = length_pred_distribute[n][length_seq] +1
-                #########seq的长度就是length_seq， 如length_pred_distribute[3][1] 就是 symbol长度为1的seq计数（length_pred_distribute[3][0]代表长度为0的seq计数）
-#        print(length_pred_distribute)
+               
         '''
         the expected 
         '''
         
-#        batch_exp = []
-#        batch_exp_full = expected
-#        batch_exp.append(batch_exp_full.numpy())
-#        batch_exp.append(expected_removed.numpy())
-#        batch_exp.append(expected_symbols.numpy())
-
 
         
         
@@ -494,19 +452,7 @@ def evaluate(
         '''
         wirte the predictions in the file 
         '''
-        
-#        f1 = open('./after_beam_search.txt','a')
-#        f1.write('\n')
-#        f1.write(str(hypotheses[0]["sequence"]["full"]))###[0]表示prob最大的batch
-#        f1.close()
-#        
-        
-        
-        
-        # Can't use .numel() for the removed versions, because they can't
-        # be converted to a tensor (stacked), as they may not have the same length.
-        # Instead it's a list of tensors.
-        # 每个batch分别有多少tokens 包含padding
+
         
         num_tokens = {
             "full": expected.numel(),###numel()返回数组中元素的个数
