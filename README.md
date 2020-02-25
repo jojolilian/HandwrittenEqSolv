@@ -79,7 +79,9 @@ For example: to evaluate the model with deeper CNNs use the `evaluate.py` script
 Different evaluation.py and there corresponding model weight:
 
 evaluate_old_128.py  -> res1000_41_-20051.pth
+
 evaluate_new_256.py  -> res256_tr_mostdata_3_0113.pth
+
 evaluate_256_3CNNs.py-> 3CNN_tr_mostdata0124.pth
 
 Since the testset of 2013&2014 are already added to the training set to increase the training data, so the evaluation runs only with 2016 testset.
