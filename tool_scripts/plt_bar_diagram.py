@@ -189,7 +189,7 @@ def relativ_dist(comp_list_a,comp_list_b,num):
 
 #eva_litdata/eva113_most/eva124_most3CNN
 
-#==========releative different tokens of 128 original model==========
+#==========relative different tokens of 128 original model==========
 rltv_ids,rltv_times=relativ_dist(groundtruth_dist,eva_litdata,20)
 rltv_dif_tokens = [id_to_token[i] for i in rltv_ids]
 print(rltv_dif_tokens) #x-axis of the grafik
