@@ -2,7 +2,13 @@
 
 Based on Multi-Scale Attention with Dense Encoder for Handwritten Mathematical Expression Recognition.
 
-# Requirements
+## table of content
+- [Requirements](## Requirements)
+- [Data](## Data)
+ -[Training](### Training)
+ -[Evaluating](### Evaluating)
+-[Related Efforts](## Related Efforts)
+## Requirements
 
 Python 3
 PyTorch
@@ -13,14 +19,14 @@ All dependencies can be installed with PIP.
 
 If you'd like to use a different installation method or another CUDA version with PyTorch (e.g. CUDA 10) follow the instructions on PyTorch - Getting Started.
 
-# Data
+## Data
 
 CROHME Competition on Recognition of Offline Handwritten Mathematical Expressionse 
 Dataset source: http://tc11.cvc.uab.es/datasets/ICFHR-CROHME-2016_1
 
 
-# Usage
-# Training
+## Usage
+### Training
 There are totally 3 different models. 
 1. Recognize the images with resolution of 128*128
 2. Recognize the images with resolution of 256*256
@@ -41,19 +47,19 @@ For all options see
 
 `python train.py --help:`
 
-# Evaluating
+### Evaluating
 The `evaluate.py` contains both predicting and evaluating process. Since there are 3 different models, the evaluating part has also 3 different files. For each different models we also did some analysis(sequence and token) on the result and by running the `evaluate.py`, we shall get the statistical count of the predictions, and these statistical result will be presented in form of histogramm in later works.
 
 For example: to evaluate the model with deeper CNNs use the `evaluate.py` script with the best weight we got on the test set 2016 and the beam width of 5:
 
 `python evaluate_256_3CNNs.py -d 2016 --beam-width 5 -c checkpoints/3CNN_tr_mostdata0124.pth`
 
-# Ploting
+### Ploting
 The results from the evaluating part contains all the statical counts of both sequence and token analysis. And by using these result we can show the result in plots and find out the problems in the model easier.
 
 After copying the data into the `plot_stats_length.py` , we can easily get the plots of sequence analysis by running the command below in the terminal.
 `python plot_stats_length.py`
 
-# Related Efforts
+## Related Efforts
 * [jungomi/math-formula-recognition](https://github.com/jungomi/math-formula-recognition)
 * [whywhs/Pytorch-Handwritten-Mathematical-Expression-Recognition](https://github.com/whywhs/Pytorch-Handwritten-Mathematical-Expression-Recognition)
