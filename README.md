@@ -8,7 +8,7 @@ Based on Multi-Scale Attention with Dense Encoder for Handwritten Mathematical E
 - [Usage](#usage)
   * [Training](#training)
   * [Evaluating](#evaluating)
-  * [Ploting](#ploting)
+  * [Plotting](#plotting)
 - [Related Efforts](#related-efforts)
 ## Requirements
 
@@ -84,7 +84,7 @@ evaluate_256_3CNNs.py-> 3CNN_tr_mostdata0124.pth
 
 Since the testset of 2013&2014 are already added to the training set to increase the training data, so the evaluation runs only with 2016 testset.
 
-### Ploting
+### Plotting
 The results from the evaluating part contains all the statical counts of both sequence and token analysis. And by using these result we can show the result in plots and find out the problems in the model easier.
 
 After copying the data into the `plot_stats_length.py` , we can easily get the plots of sequence analysis by running the command below in the terminal.
