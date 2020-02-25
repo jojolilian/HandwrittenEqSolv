@@ -86,6 +86,8 @@ evaluate_256_3CNNs.py-> 3CNN_tr_mostdata0124.pth
 
 Since the testset of 2013&2014 are already added to the training set to increase the training data, so the evaluation runs only with 2016 testset.
 
+Further more, the token analysis part of the script of the evalution need a fixed size of list which means the length of tokens(account of single typical symbol)should be figured out before the analysing.
+
 ### Plotting
 The results from the evaluating part contains all the statical counts of both sequence and token analysis. And by using these result we can show the result in plots and find out the problems in the model easier.
 
