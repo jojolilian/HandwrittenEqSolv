@@ -54,4 +54,6 @@ The results from the evaluating part contains all the statical counts of both se
 After copying the data into the `plot_stats_length.py` , we can easily get the plots of sequence analysis by running the command below in the terminal.
 `python plot_stats_length.py`
 
-
+# Related Efforts
+* [jungomi/math-formula-recognition](https://github.com/jungomi/math-formula-recognition)
+* [whywhs/Pytorch-Handwritten-Mathematical-Expression-Recognition](https://github.com/whywhs/Pytorch-Handwritten-Mathematical-Expression-Recognition)
