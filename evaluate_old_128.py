@@ -520,83 +520,83 @@ def evaluate(
 #        print(distance_distribute)
         
 # =============================================================================
-#         
-#         correct_totals = torch.tensor(
-#             [hypothesis["correct"]["total"] for hypothesis in hypotheses],
-#             dtype=torch.float,
-#         )
-#         best["correct"]["total"] += torch.max(correct_totals).item()
-#         # This should be constant, as every hypothesis should contain the same
-#         # number of expressions and therefore the mean should also be the same.
-#         mean["correct"]["total"] += torch.mean(correct_totals).item()
-#         highest_prob["correct"]["total"] += hypotheses[0]["correct"]["total"]
-#         for category in ["full", "removed", "symbols"]:
-#             category_distance = torch.tensor(
-#                 [hypothesis["distance"][category] for hypothesis in hypotheses],
-#                 dtype=torch.float,
-#             )
-#             category_correct = torch.tensor(
-#                 [hypothesis["correct"][category] for hypothesis in hypotheses],
-#                 dtype=torch.float,
-#             )
-#             category_num_tokens = torch.tensor(
-#                 [hypothesis["num_tokens"][category] for hypothesis in hypotheses],
-#                 dtype=torch.float,
-#             )
-#             best_distance = torch.argmin(category_distance)
-#             best_correct = torch.argmax(category_correct)
-#             best["distance"][category] += hypotheses[best_distance]["distance"][
-#                 category
-#             ]
-#             best["num_tokens"][category] += hypotheses[best_distance]["num_tokens"][
-#                 category
-#             ]
-#             best["correct"][category] += hypotheses[best_correct]["correct"][category]
-#             mean["distance"][category] += torch.mean(category_distance).item()
-#             mean["num_tokens"][category] += torch.mean(category_num_tokens).item()
-#             mean["correct"][category] += torch.mean(category_correct).item()
-#             # The highest probability is the first hypotheses, since it was sorted
-#             # when the top k were chosen.
-#             highest_prob["distance"][category] += hypotheses[0]["distance"][category]
-#             highest_prob["num_tokens"][category] += hypotheses[0]["num_tokens"][
-#                 category
-#             ]
-#             highest_prob["correct"][category] += hypotheses[0]["correct"][category]
-# 
-#     best["error"] = {
-#         "full": best["distance"]["full"] / best["num_tokens"]["full"],
-#         "removed": best["distance"]["removed"] / best["num_tokens"]["removed"],
-#         "symbols": best["distance"]["symbols"] / best["num_tokens"]["symbols"],
-#     }
-#     best["correct"]["percent"] = {
-#         "full": best["correct"]["full"] / best["correct"]["total"],
-#         "removed": best["correct"]["removed"] / best["correct"]["total"],
-#         "symbols": best["correct"]["symbols"] / best["correct"]["total"],
-#     }
-#     mean["error"] = {
-#         "full": mean["distance"]["full"] / mean["num_tokens"]["full"],
-#         "removed": mean["distance"]["removed"] / mean["num_tokens"]["removed"],
-#         "symbols": mean["distance"]["symbols"] / mean["num_tokens"]["symbols"],
-#     }
-#     mean["correct"]["percent"] = {
-#         "full": mean["correct"]["full"] / mean["correct"]["total"],
-#         "removed": mean["correct"]["removed"] / mean["correct"]["total"],
-#         "symbols": mean["correct"]["symbols"] / mean["correct"]["total"],
-#     }
-#     highest_prob["error"] = {
-#         "full": highest_prob["distance"]["full"] / highest_prob["num_tokens"]["full"],
-#         "removed": highest_prob["distance"]["removed"]
-#         / highest_prob["num_tokens"]["removed"],
-#         "symbols": highest_prob["distance"]["symbols"]
-#         / highest_prob["num_tokens"]["symbols"],
-#     }
-#     highest_prob["correct"]["percent"] = {
-#         "full": highest_prob["correct"]["full"] / highest_prob["correct"]["total"],
-#         "removed": highest_prob["correct"]["removed"]
-#         / highest_prob["correct"]["total"],
-#         "symbols": highest_prob["correct"]["symbols"]
-#         / highest_prob["correct"]["total"],
-#     }
+         
+         correct_totals = torch.tensor(
+             [hypothesis["correct"]["total"] for hypothesis in hypotheses],
+             dtype=torch.float,
+         )
+         best["correct"]["total"] += torch.max(correct_totals).item()
+         # This should be constant, as every hypothesis should contain the same
+         # number of expressions and therefore the mean should also be the same.
+         mean["correct"]["total"] += torch.mean(correct_totals).item()
+         highest_prob["correct"]["total"] += hypotheses[0]["correct"]["total"]
+         for category in ["full", "removed", "symbols"]:
+             category_distance = torch.tensor(
+                 [hypothesis["distance"][category] for hypothesis in hypotheses],
+                 dtype=torch.float,
+             )
+             category_correct = torch.tensor(
+                 [hypothesis["correct"][category] for hypothesis in hypotheses],
+                 dtype=torch.float,
+             )
+             category_num_tokens = torch.tensor(
+                 [hypothesis["num_tokens"][category] for hypothesis in hypotheses],
+                 dtype=torch.float,
+             )
+             best_distance = torch.argmin(category_distance)
+             best_correct = torch.argmax(category_correct)
+             best["distance"][category] += hypotheses[best_distance]["distance"][
+                 category
+             ]
+             best["num_tokens"][category] += hypotheses[best_distance]["num_tokens"][
+                 category
+             ]
+             best["correct"][category] += hypotheses[best_correct]["correct"][category]
+             mean["distance"][category] += torch.mean(category_distance).item()
+             mean["num_tokens"][category] += torch.mean(category_num_tokens).item()
+             mean["correct"][category] += torch.mean(category_correct).item()
+             # The highest probability is the first hypotheses, since it was sorted
+             # when the top k were chosen.
+             highest_prob["distance"][category] += hypotheses[0]["distance"][category]
+             highest_prob["num_tokens"][category] += hypotheses[0]["num_tokens"][
+                 category
+             ]
+             highest_prob["correct"][category] += hypotheses[0]["correct"][category]
+ 
+     best["error"] = {
+         "full": best["distance"]["full"] / best["num_tokens"]["full"],
+         "removed": best["distance"]["removed"] / best["num_tokens"]["removed"],
+         "symbols": best["distance"]["symbols"] / best["num_tokens"]["symbols"],
+     }
+     best["correct"]["percent"] = {
+         "full": best["correct"]["full"] / best["correct"]["total"],
+         "removed": best["correct"]["removed"] / best["correct"]["total"],
+         "symbols": best["correct"]["symbols"] / best["correct"]["total"],
+     }
+     mean["error"] = {
+         "full": mean["distance"]["full"] / mean["num_tokens"]["full"],
+         "removed": mean["distance"]["removed"] / mean["num_tokens"]["removed"],
+         "symbols": mean["distance"]["symbols"] / mean["num_tokens"]["symbols"],
+     }
+     mean["correct"]["percent"] = {
+         "full": mean["correct"]["full"] / mean["correct"]["total"],
+         "removed": mean["correct"]["removed"] / mean["correct"]["total"],
+         "symbols": mean["correct"]["symbols"] / mean["correct"]["total"],
+     }
+     highest_prob["error"] = {
+         "full": highest_prob["distance"]["full"] / highest_prob["num_tokens"]["full"],
+         "removed": highest_prob["distance"]["removed"]
+         / highest_prob["num_tokens"]["removed"],
+         "symbols": highest_prob["distance"]["symbols"]
+         / highest_prob["num_tokens"]["symbols"],
+     }
+     highest_prob["correct"]["percent"] = {
+         "full": highest_prob["correct"]["full"] / highest_prob["correct"]["total"],
+         "removed": highest_prob["correct"]["removed"]
+         / highest_prob["correct"]["total"],
+         "symbols": highest_prob["correct"]["symbols"]
+         / highest_prob["correct"]["total"],
+     }
 # =============================================================================
     print('-----------------predicted length----------------------')
     print(length_pred_distribute)
@@ -606,9 +606,9 @@ def evaluate(
     print(length_actu_distribute)
 
 # =============================================================================
-#     return {"best": best, "mean": mean, "highest_prob": highest_prob}
+     return {"best": best, "mean": mean, "highest_prob": highest_prob}
 # =============================================================================
-    return length_pred_distribute
+#    return length_pred_distribute
 
 def parse_args():
     parser = argparse.ArgumentParser()
