@@ -26,7 +26,7 @@ If you'd like to use a different installation method or another CUDA version wit
 CROHME Competition on Recognition of Offline Handwritten Mathematical Expressionse 
 Dataset source: http://tc11.cvc.uab.es/datasets/ICFHR-CROHME-2016_1
 
-When adding the data, there are some tools to extract groundtruth,split the training groundtruth,extract single symbols for data(extract tokens),find unknown tokens,and rewrite the tokens.tsv
+When adding the data, there are some tools to extract groundtruth,split the training groundtruth,extract single symbols for data(extract tokens),find unknown tokens,and rewrite the tokens.tsv.
 
 For extracting groundtruth, using the command:
 `python extract_groundtruth.py <path of the folder which contains .inkml files> -o <path of target .tsv file which contains groundtruth of .inkml files>`
@@ -35,6 +35,10 @@ But this will produce an empty line with `Enter(\n)` between the two groundtruth
 
 Then to split the training groundtruth random into train.tsv and validation.tsv :
 `python train_validation_split.py -i <path of the file to split> -o <path of the output folder>`
+
+For extracting tokens:
+`python extract_tokens.py <path of the groundtruth file just extracted right now> -o <path of tokens.tsv>`
+
 
 
 
