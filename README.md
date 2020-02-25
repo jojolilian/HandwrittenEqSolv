@@ -8,7 +8,7 @@ Based on Multi-Scale Attention with Dense Encoder for Handwritten Mathematical E
 - [Usage](#usage)
   * [Training](#training)
   * [Evaluating](#evaluating)
-  * [Ploting](#ploting)
+  * [Plotting](#plotting)
 - [Related Efforts](#related-efforts)
 ## Requirements
 
