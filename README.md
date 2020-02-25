@@ -5,9 +5,9 @@ Based on Multi-Scale Attention with Dense Encoder for Handwritten Mathematical E
 ## table of content
 - [Requirements](## Requirements)
 - [Data](## Data)
- -[Training](### Training)
- -[Evaluating](### Evaluating)
--[Related Efforts](## Related Efforts)
+ - [Training](### Training)
+ - [Evaluating](### Evaluating)
+- [Related Efforts](## Related Efforts)
 ## Requirements
 
 Python 3
