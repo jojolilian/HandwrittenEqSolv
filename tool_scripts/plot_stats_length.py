@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import numpy as np
-#import numpy as np
 
 
 
@@ -86,7 +85,7 @@ fig.colorbar(cax)
 
 
 plt.savefig('cov_matrix.png', dpi=300)
-#plt.matshow(cax)
+
 '''
 ---------------------------------------------------------------------------
 SHOW THE COMPARISON OF TWO DISTRIBUTION.
