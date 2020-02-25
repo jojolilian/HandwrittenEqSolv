@@ -5,7 +5,7 @@ Created on Thu Jan 30 15:39:21 2020
 @author: zqd-d
 """
 
-#new tokens
+#rewrite tokens.tsv when there is unknown error at display
 import nltk
 remap = {
         ord('\t'): ' '
