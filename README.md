@@ -9,7 +9,7 @@ PyTorch
 
 All dependencies can be installed with PIP.
 
-‘pip install -r requirements.txt‘
+`pip install -r requirements.txt`
 
 If you'd like to use a different installation method or another CUDA version with PyTorch (e.g. CUDA 10) follow the instructions on PyTorch - Getting Started.
 
@@ -31,27 +31,27 @@ And we also provide the best weights of these three different models in the /che
 
 For example you can procced the training of our best model weight by inputing the command in the terminal below:
 
-‘python train_256.py --prefix "name_you_want" -n 200 -c checkpoints/res256_tr_mostdata_3_0113.pth‘
+`python train_256.py --prefix "name_you_want" -n 200 -c checkpoints/res256_tr_mostdata_3_0113.pth`
 
 Or you can also start a new one by:
 
-‘python train_256.py --prefix "name_you_want" -n 200‘
+`python train_256.py --prefix "name_you_want" -n 200`
 
 For all options see 
 
-‘python train.py --help:‘
+`python train.py --help:`
 
 # Evaluating
-The ‘evaluate.py‘ contains both predicting and evaluating process. Since there are 3 different models, the evaluating part has also 3 different files. For each different models we also did some analysis(sequence and token) on the result and by running the ‘evaluate.py‘, we shall get the statistical count of the predictions, and these statistical result will be presented in form of histogramm in later works.
+The `evaluate.py` contains both predicting and evaluating process. Since there are 3 different models, the evaluating part has also 3 different files. For each different models we also did some analysis(sequence and token) on the result and by running the `evaluate.py`, we shall get the statistical count of the predictions, and these statistical result will be presented in form of histogramm in later works.
 
-For example: to evaluate the model with deeper CNNs use the ‘evaluate.py‘ script with the best weight we got on the test set 2016 and the beam width of 5:
+For example: to evaluate the model with deeper CNNs use the `evaluate.py` script with the best weight we got on the test set 2016 and the beam width of 5:
 
-‘python evaluate_256_3CNNs.py -d 2016 --beam-width 5 -c checkpoints/3CNN_tr_mostdata0124.pth‘
+`python evaluate_256_3CNNs.py -d 2016 --beam-width 5 -c checkpoints/3CNN_tr_mostdata0124.pth`
 
 # Ploting
 The results from the evaluating part contains all the statical counts of both sequence and token analysis. And by using these result we can show the result in plots and find out the problems in the model easier.
 
-After copying the data into the  ‘plot_stats_length.py‘ , we can easily get the plots of sequence analysis by running the command below in the terminal.
-‘python plot_stats_length.py‘
+After copying the data into the `plot_stats_length.py` , we can easily get the plots of sequence analysis by running the command below in the terminal.
+`python plot_stats_length.py`
 
 
