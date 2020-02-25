@@ -1,24 +1,19 @@
 
-#import csv
-#####目的为转变data label格式  输入源datalabel的路径label_file，和生成转换后label的路径new_label_file
 def label_conv(label_file,new_label_file):
 
     fp2=open(label_file,'r')
-#    labels = csv.reader(fp2)
     labels=fp2.readlines()
     fp2.close()
     final_label = []
-#
     for n,l in enumerate(labels):
 
         if l == '"':
-            continue            #####我加的 为了去除 label文件中无用的   "
-        #        tmp=l.strip().split(' ',1)#        uid=tmp[0]
+            continue          
         tmp=l.strip().split()[1:]
         route=l.strip().split()[0]
         t=''.join(tmp)
         leerstr = ' '
-        print('原句：'+l)
+        print('origin：'+l)
         for letter in t:
             if letter != ' ':
                 leerstr = leerstr + str(letter)+' '
@@ -33,7 +28,6 @@ def label_conv(label_file,new_label_file):
         leerstr = leerstr.replace(" \ b e t a ", " \\beta ")
         leerstr = leerstr.replace(" \ c d o t s ",  " \cdots ")
         leerstr = leerstr.replace(" \ c d o t ", " \cdot ")
-
         leerstr = leerstr.replace(" \ c o s ",  " \cos ")
         leerstr = leerstr.replace(" \ d i v ", " \div ")
         leerstr = leerstr.replace(" \ e x i s t s ", " \exists ")
@@ -42,14 +36,12 @@ def label_conv(label_file,new_label_file):
         leerstr = leerstr.replace(" \ g a m m a ", " \gamma ")
         leerstr = leerstr.replace(" \ g e q ", " \geq ")
         leerstr = leerstr.replace(" \ g t ", " \gt ")
-
         leerstr = leerstr.replace(" \ i n f t y ",  " \infty ")
         leerstr = leerstr.replace(" \ i n t ", " \int ")
         leerstr = leerstr.replace(" \ l a m b d a ", " \lambda ")
         leerstr = leerstr.replace(" \ l d o t s ", " \ldots ")
         leerstr = leerstr.replace(" \ l e f t ", " \left ")
         leerstr = leerstr.replace(" \ l e q ", " \leq ")
-
         leerstr = leerstr.replace(" \ l i m i t s ", " \limits ")
         leerstr = leerstr.replace(" \ l i m ", " \lim ")
         leerstr = leerstr.replace(" \ l o g ", " \log ")
@@ -73,12 +65,7 @@ def label_conv(label_file,new_label_file):
         leerstr = leerstr.replace(" \ t o ", " \\to ")
         leerstr = leerstr.replace(" \ i n ", " \in ")
         leerstr = leerstr.replace(" \ { ", " \{ ")
-        leerstr = leerstr.replace(" \ } ", " \} ")
-        
-        
-        
-        
-        
+        leerstr = leerstr.replace(" \ } ", " \} ")   
 #'''
 #these conversion is for the crohme testingsets of 2013,2014,2016
 #'''
@@ -110,29 +97,15 @@ def label_conv(label_file,new_label_file):
         # Some capital letters are not in the training set...
         leerstr = leerstr.replace(" O ", " o ")
         leerstr = leerstr.replace(" W ", " w ")
-        leerstr = leerstr.replace(" \ P i ", " \pi ")
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        leerstr = leerstr.replace(" \ P i ", " \pi ")     
         final_item = route +'       '+ leerstr
         final_label.append(final_item)
-        print('处理后：'+final_item)
+        print('After procceding：'+final_item)
         print(n)
     with open(new_label_file,"w") as f:
         for i in final_label:
             f.write(str(i)+'\n')
         f.close()
-
 label_file = './test_from_model1/groundtruth_2016.tsv'#'./train_from_model1/groundtruth_train.tsv'
 new_label_file = 'test_caption_2016.txt'
 label_conv(label_file,new_label_file)    
