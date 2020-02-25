@@ -56,6 +56,11 @@ For example: to evaluate the model with deeper CNNs use the `evaluate.py` script
 
 `python evaluate_256_3CNNs.py -d 2016 --beam-width 5 -c checkpoints/3CNN_tr_mostdata0124.pth`
 
+Different evaluation.py and there corresponding model.py:
+evaluate_old_128.py  -> model_old_128.py
+evaluate_new_256.py  -> model.py
+evaluate_256_3CNNs.py-> model_3CNNs.py
+
 ### Ploting
 The results from the evaluating part contains all the statical counts of both sequence and token analysis. And by using these result we can show the result in plots and find out the problems in the model easier.
 
