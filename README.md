@@ -3,11 +3,13 @@
 Based on Multi-Scale Attention with Dense Encoder for Handwritten Mathematical Expression Recognition.
 
 ## table of content
-- [Requirements](## Requirements)
-- [Data](## Data)
- - [Training](### Training)
- - [Evaluating](### Evaluating)
-- [Related Efforts](## Related Efforts)
+- [Requirements](#requirements)
+- [Data](#data)
+- [Usage](#usage)
+  * [Training](#training)
+  * [Evaluating](#evaluating)
+  * [Ploting](#ploting)
+- [Related Efforts](#related-efforts)
 ## Requirements
 
 Python 3
