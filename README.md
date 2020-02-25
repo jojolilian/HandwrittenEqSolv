@@ -2,7 +2,7 @@
 
 Based on Multi-Scale Attention with Dense Encoder for Handwritten Mathematical Expression Recognition.
 
-## table of content
+## Table of content
 - [Requirements](#requirements)
 - [Data](#data)
 - [Usage](#usage)
@@ -25,6 +25,10 @@ If you'd like to use a different installation method or another CUDA version wit
 
 CROHME Competition on Recognition of Offline Handwritten Mathematical Expressionse 
 Dataset source: http://tc11.cvc.uab.es/datasets/ICFHR-CROHME-2016_1
+During the processing of the adding data, there are some tools to extract groundtruth,find unknown tokens,
+
+python extract_groundtruth.py <path of the folder which contains .inkml files> -o C:\\Users\\zqd-d\\Desktop\\test2016_groundtruth.tsv
+
 
 
 ## Usage
@@ -64,6 +68,7 @@ evaluate_new_256.py  -> model.py
 
 evaluate_256_3CNNs.py-> model_3CNNs.py
 
+Since the testset of 2013&2014 are already added to the training set to increase the training data, so the evaluation runs only with 2016 testset.
 
 ### Ploting
 The results from the evaluating part contains all the statical counts of both sequence and token analysis. And by using these result we can show the result in plots and find out the problems in the model easier.
