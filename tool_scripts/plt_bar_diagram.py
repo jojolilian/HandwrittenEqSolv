@@ -163,7 +163,7 @@ def relativ_dist(comp_list_a,comp_list_b,num):
                 rltv_ids.append(get_key(compar_dict,i)[ii])
         
         else:
-            rltv_ids.append(get_key(compar_dict,i)[0]) #当多个概率相同时，会重复,只有一项的list可以用这种方式展开
+            rltv_ids.append(get_key(compar_dict,i)[0]) 
                     
         
     
@@ -203,7 +203,7 @@ for (a,b) in zip(range(len(rltv_dif_tokens)),rltv_times):
 plt.show()   
 
 
-#==============releative different tokens of the' with 256(higher resolution)mostdata'trained model================
+#==============relative different tokens of the' with 256(higher resolution)mostdata'trained model================
 
 rltv_ids_256_more,rltv_times_256_more=relativ_dist(groundtruth_dist,eva113_most,20)
 rltv_dif_tokens_256_more = [id_to_token[i] for i in rltv_ids_256_more]
@@ -218,7 +218,7 @@ for (a,b) in zip(range(len(rltv_dif_tokens_256_more)),rltv_times_256_more) :
     
 plt.show()
 
-#==============releative different tokens of the' with 256(higher resolution)mostdata and 3cnn structure'trained model================
+#==============relative different tokens of the' with 256(higher resolution)mostdata and 3cnn structure'trained model================
 
 rltv_ids_256_3cnn,rltv_times_256_3cnn=relativ_dist(groundtruth_dist,eva124_most3CNN,20)
 rltv_dif_tokens_256_3cnn = [id_to_token[i] for i in rltv_ids_256_3cnn]
