@@ -319,6 +319,8 @@ def evaluate(
     length_actu_distribute = [[ 0 for i in range(100)] for j in range(3)]
     distance_distribute = [[ 0 for i in range(100)] for j in range(3)]
     
+    ids_dist = [0 for i in range(119)] # 119 is the number of symbol types. 
+
     special_tokens = [data_loader.dataset.token_to_id[tok] for tok in SPECIAL_TOKENS]
     non_symbols_encoded = [data_loader.dataset.token_to_id[tok] for tok in non_symbols]
     best = {
@@ -406,7 +408,17 @@ def evaluate(
             # Only the beam_width number of hypotheses with the highest probabilities
             # are kept for the next iteration.
             hypotheses = pick_top_k_unique(step_hypotheses, beam_width)
+        tensor = hypotheses[0]["sequence"]["full"] #hypotheses[0]["sequence"]["full"][0]is the first tensor in every loop
+########################################################
+#when the id occurs, the number in the cooresponding place plus 1
+        for sequence in tensor.cpu().numpy():
+            ids_ = list(sequence)
 
+            for i in ids_:
+                ids_dist[i]+=1
+
+
+##########################################################        
         expected_removed = [
             remove_special_tokens(exp, special_tokens) for exp in expected
         ]
@@ -422,14 +434,14 @@ def evaluate(
         batch_pred = []
         #### full
         batch_full = hypotheses[0]["sequence"]["full"]
-        batch_pred.append(batch_full.numpy())
+        batch_pred.append(batch_full.cpu().numpy())
         #### removed
         batch_pred_removed = [
-                remove_special_tokens(seq, special_tokens).numpy() for seq in batch_full]
+                remove_special_tokens(seq, special_tokens).cpu().numpy() for seq in batch_full]
         batch_pred.append(batch_pred_removed)
         #### symbol
         batch_pred_symbol= [
-                remove_special_tokens(seq, special_tokens).numpy() for seq in batch_full]
+                remove_special_tokens(seq, special_tokens).cpu().numpy() for seq in batch_full]
         batch_pred.append(batch_pred_symbol)
                
 #        print('-----------------Batch:'+str(batch_number)+'----------------------')
@@ -562,6 +574,11 @@ def evaluate(
                  category
              ]
             highest_prob["correct"][category] += hypotheses[0]["correct"][category]
+
+    print("#################________the distribution of tokens during prediction________#################")
+    
+    print(ids_dist) # numbers of the occurance of each token in the prediction
+    print("##############################################################################################")
  
     best["error"] = {
          "full": best["distance"]["full"] / best["num_tokens"]["full"],

@@ -439,14 +439,14 @@ def evaluate(
         batch_pred = []
         #### full
         batch_full = hypotheses[0]["sequence"]["full"]
-        batch_pred.append(batch_full.numpy())
+        batch_pred.append(batch_full.cpu().numpy())
         #### removed
         batch_pred_removed = [
-                remove_special_tokens(seq, special_tokens).numpy() for seq in batch_full]
+                remove_special_tokens(seq, special_tokens).cpu().numpy() for seq in batch_full]
         batch_pred.append(batch_pred_removed)
         #### symbol
         batch_pred_symbol= [
-                remove_special_tokens(seq, special_tokens).numpy() for seq in batch_full]
+                remove_special_tokens(seq, special_tokens).cpu().numpy() for seq in batch_full]
         batch_pred.append(batch_pred_symbol)
                
 #        print('-----------------Batch:'+str(batch_number)+'----------------------')
